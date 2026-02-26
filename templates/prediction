@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Savings Report</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght:300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(10,10,10,0.9)),
+                url("https://images.unsplash.com/photo-1507679799987-c73779587ccf")
+                no-repeat center/cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .report-box {
+            width: 75%;
+            padding: 45px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.18);
+            animation: fadeIn 1s ease;
+            color: white;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 34px;
+            font-weight: 600;
+            background: linear-gradient(to right, #ffd700, #fff2a8);
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            margin-bottom: 28px;
+            text-shadow: 0 0 18px rgba(255,215,0,0.4);
+        }
+
+        .result-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 25px;
+            font-size: 18px;
+            border-left: 5px solid #ffd700;
+            white-space: pre-wrap;
+            animation: slideUp 0.7s ease;
+            box-shadow: 0 0 20px rgba(255,215,0,0.2);
+        }
+
+        /* Gold Button */
+        .btn-gold {
+            margin: 35px auto 0;
+            display: block;
+            width: 240px;
+            padding: 12px;
+            background: linear-gradient(135deg, #ffd700, #ffcc33);
+            border: none;
+            color: black;
+            font-size: 18px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(255,215,0,0.5);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(255,215,0,0.9);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(35px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="report-box">
+
+    <h1 class="title">Savings Summary Report</h1>
+
+    <div class="result-card">
+        {{ result | safe }}
+    </div>
+
+    <a class="btn-gold" href="/">Generate Again</a>
+
+</div>
+
+</body>
+</html>
